@@ -131,7 +131,8 @@ namespace OpenGL_3_3Engine
 
 	void Engine::Close()
 	{
-		GameEnd();
 		glfwTerminate();
+		GameEnd();
+		
 	}
 };

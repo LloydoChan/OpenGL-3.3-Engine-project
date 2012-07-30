@@ -8,7 +8,7 @@
 #include "Texture.h"
 #include "Shader.h"
 #include "LightsAndMaterials.h"
-#include "Texture.h"
+#include "TextureManager.h"
 
 struct aiScene;
 struct aiNode;
@@ -22,16 +22,16 @@ namespace OpenGL_3_3Engine
 		ObjectData* m_meshData;
 		MaterialStruct* m_material;
 		bool m_hasTexture;
-		Texture* m_texture;
+		GLuint m_textureHandle;
 
-		MeshComponent() : m_hasTexture(false) { m_meshData = NULL; m_material = NULL; m_texture = NULL;}
-		~MeshComponent() {delete m_meshData; delete m_material; delete m_texture;}
+		MeshComponent() : m_hasTexture(false) { m_meshData = NULL; m_material = NULL; m_textureHandle = NULL;}
+		~MeshComponent() {delete m_meshData; delete m_material;}
 	};
 
 	class StaticMesh
 	{
 		public:
-			StaticMesh(){}
+			StaticMesh(TextureManager* texMan) {this->m_texMan = texMan;}
 			~StaticMesh();
 
 			bool Init(const char* filename,const char* directory);
@@ -51,8 +51,10 @@ namespace OpenGL_3_3Engine
 			void GetBoundingBoxForNode(const aiNode* node,glm::vec3& min,glm::vec3& max,aiMatrix4x4& trafo,
 				                       const aiScene* scene);
 			MaterialStruct* LoadMaterials(const aiScene* scene,aiMaterial* materials);
-			Texture*        LoadTextures(const char* directory,const  aiScene* scene,aiMaterial* material);
+			GLuint          LoadTextures(const char* directory,const  aiScene* scene,aiMaterial* material);
 			//void RecursiveRender(const aiScene* scene,const aiNode* node);
+
+			TextureManager* m_texMan;
 
 
 	};
@@ -61,7 +63,7 @@ namespace OpenGL_3_3Engine
 	{
 		if(m_meshData[meshNum]->m_hasTexture)
 		{
-			glBindTexture(GL_TEXTURE_2D,m_meshData[meshNum]->m_texture->m_handle);
+			glBindTexture(GL_TEXTURE_2D,m_meshData[meshNum]->m_textureHandle);
 		}
 
 		glBindVertexArray(m_meshData[meshNum]->m_meshData->GetVAO());

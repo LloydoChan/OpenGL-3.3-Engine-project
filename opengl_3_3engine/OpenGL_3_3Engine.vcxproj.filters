@@ -90,6 +90,9 @@
     <ClInclude Include="FiveLightVertexShader.h">
       <Filter>Header Files\Prebuilt Shaders</Filter>
     </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MainApp.cpp">
@@ -145,6 +148,9 @@
     </ClCompile>
     <ClCompile Include="FiveLightVertexShader.cpp">
       <Filter>Source Files\Prebuilt Shaders</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

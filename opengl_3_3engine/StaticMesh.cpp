@@ -153,7 +153,7 @@ namespace OpenGL_3_3Engine
 			newComp->m_meshData = newObject;
 
 			MaterialStruct* newMat = NULL;
-			Texture*        newTex = NULL;
+			GLuint          newTex = 0;
 
 			//load materials
 			newMat = LoadMaterials(scene,scene->mMaterials[thisMesh->mMaterialIndex]);
@@ -161,10 +161,10 @@ namespace OpenGL_3_3Engine
 
 			newComp->m_material = newMat;
 
-			if(newTex != NULL)
+			if(newTex != 0)
 			{
 				newComp->m_hasTexture = true;
-				newComp->m_texture = newTex;
+				newComp->m_textureHandle = newTex;
 			}
 
 			m_meshData.push_back(newComp);
@@ -266,7 +266,7 @@ namespace OpenGL_3_3Engine
 		return mat;
 	}
 
-	Texture* StaticMesh::LoadTextures(const char* directory,const aiScene* scene,aiMaterial* material)
+	GLuint StaticMesh::LoadTextures(const char* directory,const aiScene* scene,aiMaterial* material)
 	{
 		
 		int texIndex = 0;
@@ -286,7 +286,6 @@ namespace OpenGL_3_3Engine
 			// more textures?
 			texIndex++;
 			texFound = material->GetTexture(aiTextureType_DIFFUSE, texIndex, &path);
-			std::cout << path.data << std::endl;
 		}
 
 
@@ -295,10 +294,14 @@ namespace OpenGL_3_3Engine
 
 		if(numTextures != 0)
 		{
-			Texture* meshTexture = new Texture;
+			//Texture* meshTexture = new Texture;
 
-			meshTexture->Init(texNames[0],GL_LINEAR,GL_LINEAR,GL_REPEAT,GL_REPEAT);
-			return meshTexture;
+			//meshTexture->Init(texNames[0],GL_LINEAR,GL_LINEAR,GL_REPEAT,GL_REPEAT);
+			//return meshTexture;
+
+			//load the texture using the textureManager
+			return m_texMan->GetRecord(std::string(texNames[0]));
+
 		}
 		else
 		{
