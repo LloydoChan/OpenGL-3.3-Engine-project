@@ -38,10 +38,10 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Program Files\assimp2\include;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Win32\api\inc;C:\Program Files\Lua\5.1\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Include;C:\Program Files\assimp2\include;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Win32\api\inc;C:\Program Files\Lua\5.1\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LibraryPath>C:\Program Files\FMOD SoundSystem\FMOD Programmers API Win32\api\lib;C:\Program Files\Lua\5.1\lib;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Lib;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Win32\api\lib;C:\Program Files\Lua\5.1\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -89,6 +89,7 @@
     <ClInclude Include="Framebuffer.h" />
     <ClInclude Include="glInfo.h" />
     <ClInclude Include="Includes.h" />
+    <ClInclude Include="Joypad.h" />
     <ClInclude Include="LightsAndMaterials.h" />
     <ClInclude Include="MainApp.h" />
     <ClInclude Include="ObjectData.h" />
@@ -113,6 +114,7 @@
     <ClCompile Include="FiveLightVertexShader.cpp" />
     <ClCompile Include="Framebuffer.cpp" />
     <ClCompile Include="glInfo.cpp" />
+    <ClCompile Include="Joypad.cpp" />
     <ClCompile Include="MainApp.cpp" />
     <ClCompile Include="ObjectData.cpp" />
     <ClCompile Include="OpenGL_3_3Engine.cpp" />

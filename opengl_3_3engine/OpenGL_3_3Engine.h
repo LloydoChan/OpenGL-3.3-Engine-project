@@ -1,5 +1,5 @@
 //OpenGL_3_3Engine.h
-//last update: 14/07/2012
+//last update: 01/08/2012
 
 #pragma once
 
@@ -13,6 +13,7 @@
 #include "Framebuffer.h"
 #include "Script.h"
 #include "Audio.h"
+#include "Joypad.h"
 #include "PassThroughShader.h"
 #include "TexturedShader.h"
 #include "CubeMapShader.h"
