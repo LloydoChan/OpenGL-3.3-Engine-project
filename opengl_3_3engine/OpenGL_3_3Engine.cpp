@@ -45,10 +45,11 @@ namespace OpenGL_3_3Engine
 			return false;
 		}
 
-		glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 4);
+		//glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 4);
 		glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
 		glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 3);
 		glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
 
 		// Open a window and create its OpenGL context
 		if( !glfwOpenWindow( width, height, 0,0,0,0, depth,0, GLFW_WINDOW ) )
@@ -57,6 +58,7 @@ namespace OpenGL_3_3Engine
 			glfwTerminate();
 			return -1;
 		}
+
 
 		if(glewInit() != GLEW_OK)
 		{
@@ -74,13 +76,13 @@ namespace OpenGL_3_3Engine
 		glFrontFace(GL_CCW);
 
 		//glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);	// Really Nice Perspective Calculations
-		glDisable(GL_LIGHTING);
-		glShadeModel(GL_SMOOTH);
-		glDisable(GL_BLEND);
-		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		//glDisable(GL_LIGHTING);
+		//glShadeModel(GL_SMOOTH);
+		//glDisable(GL_BLEND);
+		//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
-		glInfo::getInstance().Init();
-		glInfo::getInstance().PrintInfo();
+		//glInfo::getInstance().Init();
+		//glInfo::getInstance().PrintInfo();
 
 		if(!GameInit())
 			return false;

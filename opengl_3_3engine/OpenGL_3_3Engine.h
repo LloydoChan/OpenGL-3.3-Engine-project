@@ -20,6 +20,7 @@
 #include "StaticMesh.h"
 #include "FiveLightFragmentShader.h"
 #include "FiveLightVertexShader.h"
+#include "RigidBody.h"
 
 extern bool gameOver;
 extern bool GamePreload();

@@ -7,7 +7,7 @@ namespace OpenGL_3_3Engine
 	bool CubeMap::Init(const char* filename)
 	{
 		glGenTextures(1,&m_handle);
-		glEnable(GL_TEXTURE_CUBE_MAP);
+		//glEnable(GL_TEXTURE_CUBE_MAP);
 
 		glBindTexture(GL_TEXTURE_CUBE_MAP, m_handle);
 
