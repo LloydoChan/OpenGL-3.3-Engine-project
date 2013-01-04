@@ -7,7 +7,7 @@ namespace OpenGL_3_3Engine
 	class Framebuffer
 	{
 		public:
-			Framebuffer(){};
+			Framebuffer():m_FBOhandle(0),m_texHandle(0),m_depthHandle(0),m_height(0),m_width(0){};
 			~Framebuffer();
 
 			bool InitFramebuffer(int height,int width,GLfloat magFilter,GLfloat minFilter,bool depth = false);

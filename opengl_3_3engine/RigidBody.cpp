@@ -7,10 +7,9 @@ using glm::vec3;
 using glm::quat;
 
 
-RigidBody::RigidBody(float mass,vec3& position,mat3x3& orientation,glm::mat3x3& inertiaTensor): 
+RigidBody::RigidBody(float mass,vec3& position,mat3x3& orientation): 
 		             m_mass(mass),m_position(position),m_orientation(orientation),m_linearMomentum(vec3(0.0f,0.0f,0.0f)),
-					 m_angularMomentum(vec3(0.0f,0.0f,0.0f)),m_inertiaTensor(inertiaTensor),
-					 m_inverseInertiaTensor(inertiaTensor._inverse())
+					 m_angularMomentum(vec3(0.0f,0.0f,0.0f))
 {
 	assert(m_mass > 0.0f && "mass is equal to or lower than zero in the constructor");
 }
@@ -59,9 +58,8 @@ void RigidBody::ApplyForce(vec3& force,vec3& contactPoint)
 	float threshold = 0.0001f;
 	for(int direction = 0; direction < 3; direction++)
 	{
-		if(m_force[direction] < threshold) m_force[direction] = 0.0f;
-		if(m_torque[direction] < threshold) m_torque[direction] = 0.0f;
+		if(m_force[direction] < threshold && m_force[direction] > -threshold) m_force[direction] = 0.0f;
+		if(m_torque[direction] < threshold && m_torque[direction] > -threshold) m_torque[direction] = 0.0f;
 	}
 
-	assert(m_force[0] == 0.0f);
 }

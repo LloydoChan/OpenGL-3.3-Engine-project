@@ -3,6 +3,7 @@
 #include <glm/glm.hpp>
 #include <glm\gtx\quaternion.hpp>
 #include <glm\gtc\matrix_transform.hpp>
+#include <glm\gtx\inertia.hpp>
 #include <assert.h>
 
 using glm::vec3;
@@ -13,8 +14,7 @@ using glm::mat3x3;
 class RigidBody
 {
 	public:
-		RigidBody(float mass,vec3& position,mat3x3& orientation,glm::mat3x3& inertiaTensor);
-
+		virtual ~RigidBody(){};
 		const vec3&   GetLinearMomentum()const {return m_linearMomentum;}
 		const vec3&   GetAngularMomentum()const {return m_angularMomentum;}
 		const mat3x3& GetOrientation()const {return m_orientation;}
@@ -28,7 +28,9 @@ class RigidBody
 
 		void ApplyForce(vec3& force,vec3& contactPoint);
 
-	private:
+protected:
+		RigidBody(float mass,vec3& position,mat3x3& orientation);
+
 		float m_mass;
 		vec3 m_position;
 		vec3 m_linearMomentum;

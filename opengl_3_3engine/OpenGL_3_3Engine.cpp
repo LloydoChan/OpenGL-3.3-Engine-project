@@ -48,7 +48,7 @@ namespace OpenGL_3_3Engine
 		//glfwOpenWindowHint(GLFW_FSAA_SAMPLES, 4);
 		glfwOpenWindowHint(GLFW_OPENGL_VERSION_MAJOR, 3);
 		glfwOpenWindowHint(GLFW_OPENGL_VERSION_MINOR, 3);
-		glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+		//glfwOpenWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
 
 		// Open a window and create its OpenGL context
