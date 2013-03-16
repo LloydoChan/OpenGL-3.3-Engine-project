@@ -1,0 +1,39 @@
+﻿Build started 2013/03/16 21:41:53.
+     1>Project "C:\Users\Big L\Documents\Visual Studio 2010\Projects\OpenGL_3_3Engine\OpenGL_3_3Engine\OpenGL_3_3Engine.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\OpenGL_3_3Engine.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _LIB /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt OpenGL_3_3Engine.cpp
+         OpenGL_3_3Engine.cpp
+     1>c:\users\big l\documents\visual studio 2010\projects\opengl_3_3engine\opengl_3_3engine\opengl_3_3engine.cpp(17): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>c:\users\big l\documents\visual studio 2010\projects\opengl_3_3engine\opengl_3_3engine\opengl_3_3engine.cpp(59): warning C4305: 'return' : truncation from 'int' to 'bool'
+       Lib:
+         c:\Program Files\Microsoft Visual Studio 10.0\VC\bin\Lib.exe /OUT:"C:\Users\Big L\Documents\Visual Studio 2010\Projects\OpenGL_3_3Engine\OpenGL_3_3Engine\..\lib\OpenGL_3_3Engine.lib" /NOLOGO Debug\Audio.obj
+         Debug\Camera.obj
+         Debug\CubeMap.obj
+         Debug\Framebuffer.obj
+         Debug\Frustum.obj
+         Debug\glInfo.obj
+         Debug\ImageUtils.obj
+         Debug\Joypad.obj
+         Debug\MainApp.obj
+         Debug\ObjectData.obj
+         Debug\OpenGL_3_3Engine.obj
+         Debug\Quad.obj
+         Debug\ResourceManager.obj
+         Debug\RigidBody.obj
+         Debug\Script.obj
+         Debug\Shader.obj
+         Debug\SkyDome.obj
+         Debug\StaticMesh.obj
+         Debug\Texture.obj
+         Debug\Timer.obj
+         OpenGL_3_3Engine.vcxproj -> C:\Users\Big L\Documents\Visual Studio 2010\Projects\OpenGL_3_3Engine\OpenGL_3_3Engine\..\lib\OpenGL_3_3Engine.lib
+       FinalizeBuildStatus:
+         Deleting file "Debug\OpenGL_3_3Engine.unsuccessfulbuild".
+         Touching "Debug\OpenGL_3_3Engine.lastbuildstate".
+     1>Done Building Project "C:\Users\Big L\Documents\Visual Studio 2010\Projects\OpenGL_3_3Engine\OpenGL_3_3Engine\OpenGL_3_3Engine.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.74

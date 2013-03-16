@@ -1,0 +1,14 @@
+//pass.vert
+#version 330 core
+
+in vec3 inCoords;
+
+uniform float time;
+
+void main()
+{
+  vec3 pos = vec3(time,time,time);
+  //gl_Position = MVPMatrix * vec4(position,1.0);
+  gl_Position = vec4(inCoords + pos,1.0);
+
+}

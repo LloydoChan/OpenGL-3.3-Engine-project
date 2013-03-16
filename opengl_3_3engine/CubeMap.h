@@ -8,12 +8,14 @@ namespace OpenGL_3_3Engine
 {
 	class CubeMap
 	{
-	public:
-		CubeMap(){};
-		~CubeMap(){ glDeleteTextures(1,&m_handle);}
+		public:
+			CubeMap(){};
+			~CubeMap(){ glDeleteTextures(1,&m_handle);}
 
-		bool Init(const char* filename);
+			bool			Init(const char* filename);
+			GLuint			GetHandle()const {return m_handle;}
 
-		GLuint m_handle;
+		private:
+			GLuint m_handle;
 	};
 }

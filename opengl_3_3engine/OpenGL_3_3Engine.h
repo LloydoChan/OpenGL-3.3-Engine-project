@@ -14,15 +14,13 @@
 #include "Script.h"
 #include "Audio.h"
 #include "Joypad.h"
-#include "PassThroughShader.h"
-#include "TexturedShader.h"
-#include "CubeMapShader.h"
 #include "StaticMesh.h"
-#include "FiveLightFragmentShader.h"
-#include "FiveLightVertexShader.h"
 #include "CubeRigidBody.h"
 #include "SphereRigidBody.h"
-
+#include "Timer.h"
+#include "Quad.h"
+#include "Frustum.h"
+#include "SkyDome.h"
 extern bool gameOver;
 extern bool GamePreload();
 extern bool GameInit();
@@ -33,8 +31,6 @@ extern void GameEnd();
 
 namespace OpenGL_3_3Engine
 {
-	class Shader;
-
 	class Engine
 	{
 		public:
@@ -45,11 +41,10 @@ namespace OpenGL_3_3Engine
 			bool Init(int width,int height,int depth,bool fullscreen);
 			void Close();
 
-			void Update();
+			void Update(double dt);
 
 			void ShutDown();
 
-			void ClearScreen();
 
 			void StartRender();
 			void EndRender();
@@ -70,6 +65,6 @@ namespace OpenGL_3_3Engine
 	};
 };
 
-extern OpenGL_3_3Engine::Engine* g_Engine;
+extern OpenGL_3_3Engine::Engine* g_engine;
 
 //end of file

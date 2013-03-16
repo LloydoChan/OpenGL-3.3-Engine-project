@@ -1,0 +1,169 @@
+# Max2Mtl Version 4.0 Mar 10th, 2001
+#
+# Multi/Sub Material__43 (18) to come 
+#
+newmtl RAPICROM
+Ka  0.5 0.5 0.4
+Kd  0.5 0.5 0.4
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+# 
+newmtl AMARILLO
+Ka  1.0 0.9 0.4
+Kd  1.0 0.9 0.4
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd RAPIMORE.TGA 
+# 
+newmtl GRIS
+Ka  0.3 0.3 0.3
+Kd  0.3 0.3 0.3
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+map_Kd RAPIOCRE.TGA 
+# 
+newmtl RAPIDOWN1
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd RAPIMORE.TGA
+bump RAPIWIBM.TGA 
+# 
+newmtl RAPIUP
+Ka  0.7 0.7 0.7
+Kd  0.7 0.7 0.7
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd RAPIOCRE.TGA
+bump RAPIWIBM.TGA
+# 
+newmtl RAPIFLYD
+Ka  1.0 0.9 0.4
+Kd  1.0 0.9 0.4
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd FL1TXDW.TGA
+bump FL1BMUP.TGA
+# 
+newmtl RAPIFLYU
+Ka  0.4 0.4 0.4
+Kd  0.4 0.4 0.4
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+map_Kd FL2TXUP.TGA 
+bump FL1BMUP.TGA
+# 
+newmtl RAPIFLYU1
+Ka  0.4 0.4 0.4
+Kd  0.4 0.4 0.4
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+map_Kd RAPIOCRE.TGA 
+bump FL2BMUP.TGA
+#
+newmtl RAPIFLYD1
+Ka  1.0 0.9 0.4
+Kd  1.0 0.9 0.4
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd TXTALA.TGA 
+bump FL2BMDW.TGA
+#
+newmtl FUSELEFT
+Ka  1.0 0.9 0.4
+Kd  1.0 0.9 0.4
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+# 
+newmtl RAPIDOWN
+Ka  1.0 0.9 0.4
+Kd  1.0 0.9 0.4
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd RAPIMORE.TGA
+bump RAPIDWBM.TGA
+#
+newmtl RAPIBLAC
+Ka  0.3 0.3 0.3
+Kd  0.3 0.3 0.3
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+map_Kd RAPIOCRE.TGA 
+#
+newmtl FUSERIGT
+Ka  1.0 0.9 0.4
+Kd  1.0 0.9 0.4
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+ #
+newmtl RAPIGLA2
+Ka  1.0 0.9 0.4
+Kd  1.0 0.9 0.4
+Ks  1.0 1.0 1.0
+d  0.8
+Ns  0.5
+illum 2
+ #
+newmtl RAPIGLAS
+Ka  0.1 0.2 0.0
+Kd  0.1 0.2 0.0
+Ks  1.0 1.0 1.0
+d  0.5
+Ns  0.5
+illum 2 
+#
+newmtl RAPIMORE
+Ka  1.0 0.9 0.4
+Kd  1.0 0.9 0.4
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+map_Kd RAPIMORE.JPG 
+#
+newmtl RAPITIRE
+Ka  0.1 0.1 0.1
+Kd  0.1 0.1 0.1
+Ks  0.9 0.9 0.9
+d  1.0
+Ns  0.5
+illum 2
+ #
+newmtl SCORCROM
+Ka  0.8 0.8 0.8
+Kd  0.8 0.8 0.8
+Ks  1.0 1.0 1.0
+d  1.0
+Ns  0.5
+illum 2
+#
+# Multi/SSub Material__43 done 
+#
+# EOF

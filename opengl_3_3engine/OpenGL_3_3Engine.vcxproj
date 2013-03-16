@@ -19,7 +19,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>StaticLibrary</ConfigurationType>
@@ -38,10 +38,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Include;C:\Program Files\assimp2\include;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Win32\api\inc;C:\Program Files\Lua\5.1\include;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Program Files\assimp2\include\Assimp;C:\Program Files\DevIL\include;C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Include;C:\Program Files\assimp2\include;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Win32\api\inc;C:\Program Files\Lua\5.1\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LibraryPath>C:\Program Files\Microsoft DirectX SDK %28June 2010%29\Lib;C:\Program Files\FMOD SoundSystem\FMOD Programmers API Win32\api\lib;C:\Program Files\Lua\5.1\lib;$(LibraryPath)</LibraryPath>
+    <OutDir>$(ProjectDir)..\lib\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -81,52 +82,52 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Audio.h" />
+    <ClInclude Include="BoundingBox.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CubeMap.h" />
-    <ClInclude Include="CubeMapShader.h" />
-    <ClInclude Include="FiveLightFragmentShader.h" />
-    <ClInclude Include="FiveLightVertexShader.h" />
     <ClInclude Include="Framebuffer.h" />
+    <ClInclude Include="Frustum.h" />
     <ClInclude Include="glInfo.h" />
+    <ClInclude Include="ImageUtils.h" />
     <ClInclude Include="Includes.h" />
     <ClInclude Include="Joypad.h" />
     <ClInclude Include="LightsAndMaterials.h" />
     <ClInclude Include="MainApp.h" />
     <ClInclude Include="ObjectData.h" />
     <ClInclude Include="OpenGL_3_3Engine.h" />
-    <ClInclude Include="PassThroughShader.h" />
+    <ClInclude Include="Quad.h" />
+    <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
     <ClInclude Include="RigidBody.h" />
     <ClInclude Include="Script.h" />
     <ClInclude Include="Shader.h" />
-    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="SkyDome.h" />
     <ClInclude Include="StaticMesh.h" />
     <ClInclude Include="Texture.h" />
-    <ClInclude Include="TexturedShader.h" />
     <ClInclude Include="TextureManager.h" />
     <ClInclude Include="Timer.h" />
+    <ClInclude Include="Uncopyable.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Audio.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CubeMap.cpp" />
-    <ClCompile Include="CubeMapShader.cpp" />
-    <ClCompile Include="FiveLightFragmentShader.cpp" />
-    <ClCompile Include="FiveLightVertexShader.cpp" />
     <ClCompile Include="Framebuffer.cpp" />
+    <ClCompile Include="Frustum.cpp" />
     <ClCompile Include="glInfo.cpp" />
+    <ClCompile Include="ImageUtils.cpp" />
     <ClCompile Include="Joypad.cpp" />
     <ClCompile Include="MainApp.cpp" />
     <ClCompile Include="ObjectData.cpp" />
     <ClCompile Include="OpenGL_3_3Engine.cpp" />
-    <ClCompile Include="PassThroughShader.cpp" />
+    <ClCompile Include="Quad.cpp" />
+    <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="RigidBody.cpp" />
     <ClCompile Include="Script.cpp" />
     <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="SkyDome.cpp" />
     <ClCompile Include="StaticMesh.cpp" />
     <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="TexturedShader.cpp" />
-    <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="Timer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

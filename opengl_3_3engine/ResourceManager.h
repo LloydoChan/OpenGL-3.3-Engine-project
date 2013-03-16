@@ -1,38 +1,45 @@
-//ResourceManager.h - interface file for a resource manager class. This class is templatized and used to manage
-//various things like textures, shaders, objects, etc!
+//ResourceManager.h
+#ifndef _RESOURCE_MAN_H
+#define _RESOURCE_MAN_H
+
 #include "Includes.h"
 
-namespace OpenGL_3_3Engine
-{
-	template<class T>
-	class ResourceManager
-	{
-		public:
-			ResourceManager(){};
-			~ResourceManager(){resources.clear();}
+using std::vector;
+using std::stack;
+using std::string;
 
-			void AddEntry(const std::string& key,T* entry);
-
-			T*   GetEntry(const std::string& entry);
-
-		private:
-			std::map<std::string,T*> resources;
-	};
-
-	template <class T>
-	void ResourceManager<T>::AddEntry(const std::string& key,T* entry)
-	{
-		    assert(!resources[key] && "this has already been loaded to the map");
-			resources[key] = entry;
-		
-	}
+class Texture;
+class Shader;
 
 
-	template <class T>
-	T*   ResourceManager<T>::GetEntry(const std::string& entry)
-	{
-	
-		return resources[entry];
-		
-	}
+template <class T>
+class ResourceManager{
+	public:
+		ResourceManager(void(*CreateResourceFunc)(T**,const unsigned int,const std::string&,const std::string&))
+						{CreateResource = CreateResourceFunc;}
+		~ResourceManager();
+
+		T*				GetElement(const unsigned int handle);
+		T*				GetElement(const string& name,const string& path);
+		vector<T>*		GetList();
+
+		T*				operator[](const unsigned int handle);
+		void			Remove(const unsigned int handle);
+		unsigned int	Add(const string& name,const string& path);
+		void			EmptyList();
+
+		void			ChangeResourceCreation(void(*CreateResourceFunc)(T**,const unsigned int,const std::string&,const std::string&))
+		{
+			CreateResource = CreateResourceFunc;
+		}
+	private:
+		vector<T*>																m_list;
+		stack<unsigned int>														m_handles;
+		void(*CreateResource)(T**,const unsigned int,const std::string&,const std::string&);
+
 };
+
+#include "ResourceManager.cpp"
+
+
+#endif

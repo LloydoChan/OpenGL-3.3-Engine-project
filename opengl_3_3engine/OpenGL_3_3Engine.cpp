@@ -1,5 +1,5 @@
 //OpenGL_3_3Engine.cpp
-//last update 15/07/2012
+//last update 03/16/2013
 
 #include "OpenGL_3_3Engine.h"
 #include "glInfo.h"
@@ -52,7 +52,7 @@ namespace OpenGL_3_3Engine
 
 
 		// Open a window and create its OpenGL context
-		if( !glfwOpenWindow( width, height, 0,0,0,0, depth,0, GLFW_WINDOW ) )
+		if( !glfwOpenWindow( width, height,8,8,8,8,32,32,GLFW_WINDOW ) )
 		{
 			fprintf( stderr, "Failed to open GLFW window. If you have an Intel GPU, they are not 3.3 compatible. Try the 2.1 version of the tutorials.\n" );
 			glfwTerminate();
@@ -66,6 +66,14 @@ namespace OpenGL_3_3Engine
 			return false;
 		}
 
+		//Init DevIL library and states
+		ilInit();
+		ilOriginFunc(IL_ORIGIN_UPPER_LEFT);
+		ilEnable(IL_ORIGIN_SET);
+
+		ilEnable(IL_TYPE_SET);
+		ilTypeFunc(IL_UNSIGNED_BYTE);
+
 		
 
 		glEnable(GL_DEPTH_TEST);
@@ -75,11 +83,11 @@ namespace OpenGL_3_3Engine
 		glCullFace(GL_BACK);
 		glFrontFace(GL_CCW);
 
-		//glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);	// Really Nice Perspective Calculations
-		//glDisable(GL_LIGHTING);
-		//glShadeModel(GL_SMOOTH);
+		glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);	// Really Nice Perspective Calculations
+		glDisable(GL_LIGHTING);
+		glShadeModel(GL_SMOOTH);
 		//glDisable(GL_BLEND);
-		//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 		//glInfo::getInstance().Init();
 		//glInfo::getInstance().PrintInfo();
@@ -95,23 +103,10 @@ namespace OpenGL_3_3Engine
 		gameOver = true;
 	}
 
-	void Engine::Update()
+	void Engine::Update(double dt)
 	{
-		//use glfw to get SECONDS since glfwInit was called
-		static double lastTime = glfwGetTime();
-
-		//find out the number of SECONDS since the last frame
-		double timeNow = glfwGetTime();
-
-		double timeDiff = timeNow - lastTime;
-		lastTime = timeNow;
-
-		//work out the num of milliseconds, mult by 1000
-		m_milliPerFrame = timeDiff * 1000.0f;
-		m_frameRate = 1000/m_milliPerFrame;
-
-		GameUpdate(timeDiff);
-
+		
+		GameUpdate(dt);
 		//std::cout<<m_frameRate<<std::endl;
 		//std::cout<<m_milliPerFrame<<std::endl;
 	}

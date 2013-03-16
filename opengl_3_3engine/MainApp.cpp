@@ -3,8 +3,9 @@
 #include "MainApp.h"
 #include "OpenGL_3_3Engine.h"
 
-OpenGL_3_3Engine::Engine * g_engine = NULL; 
 bool gameOver;
+
+OpenGL_3_3Engine::Engine *g_engine;
 
 int main()
 {
@@ -28,7 +29,7 @@ int main()
 
 	while(!gameOver)
 	{
-		g_engine->Update();
+		Timer::GetInstance()->Idle();
 		g_engine->StartRender();
 		g_engine->Render();
 		g_engine->EndRender();

@@ -4,10 +4,13 @@
 #pragma once
 
 #include <iostream>
+#include "Uncopyable.h"
 #include <vector>
 #include <string>
 #include <fstream>
 #include <stdarg.h>
+#include <time.h>
+#include <stack>
 #include <map>
 #include <gl\glew.h>
 #include <gl\glfw.h>
@@ -19,3 +22,7 @@
 #include <glm\gtx\rotate_vector.hpp>
 #include <glm\gtx\inverse_transpose.hpp>
 #include <cassert>
+#include <IL\il.h>
+
+
+const float PI = (float)3.1415926; 
